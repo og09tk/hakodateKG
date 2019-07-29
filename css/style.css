@@ -1,0 +1,459 @@
+body {
+    /* font-family: source-sans-pro; */
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0px;
+    color: rgb(255, 255, 255);
+    line-height: 2em;
+    letter-spacing: 0.2em;
+    width: 100%;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    z-index: 0;
+    transition: transform .3s;
+}
+
+a:after {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 1);
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+    z-index: -1;
+}
+
+a:hover {
+    color: rgb(30, 30, 30);
+}
+
+a:hover::after {
+    transform: scale(1, 1);
+    background: rgb(255, 255, 255);
+}
+
+.bg {
+    width: 100%;
+    z-index: -9;
+    position: fixed;
+    margin: 0 auto;
+}
+
+nav {
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
+    width: 100%;
+    position: fixed;
+    z-index: 1000000;
+}
+
+.menu {
+    position: relative;
+    width: 100%;
+    /* height: 50px; */
+    max-width: 1000px;
+    margin: 10px auto;
+    text-align: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.menu>li {
+    float: left;
+    /* width: 13%; */
+    /* グローバルナビ4つの場合 */
+    /* height: 100%; */
+    line-height: 40px;
+    margin: 10px 20px;
+    padding: 0;
+}
+
+.menu>li a {
+    position: relative;
+    /* display: block; */
+    color: #fff;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: transform .3s;
+}
+
+.menu>li a:after {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 1);
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+    z-index: -1;
+}
+
+.menu>li a:hover {
+    color: rgb(44, 44, 44);
+}
+
+.menu>li a:hover::after {
+    transform: scale(1, 1);
+    background: rgb(255, 255, 255);
+}
+
+ul.menu_02 {
+    visibility: hidden;
+    list-style: none;
+    /* position: absolute; */
+    opacity: 0;
+    z-index: 1;
+    padding: 0;
+}
+
+.menu>li.menu_01 {
+    position: relative;
+}
+
+li.menu_01 ul.menu_02 {
+    /* position: absolute; */
+    top: 40px;
+    width: 100%;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+li.menu_01:hover ul.menu_02 {
+    top: 50px;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* 予約ボタンのアニメーション */
+
+.reserve {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    border: solid 1px #fff;
+    padding: 6px 14px;
+}
+
+.reserve::after {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgb(255, 255, 255);
+    /* transform-origin: center top; */
+    transition: all .3s;
+}
+
+.reserve:hover {
+    color: rgb(30, 30, 30);
+}
+
+.reserve:hover::after {
+    opacity: 1;
+}
+
+#bg>img {
+    width: 1920px;
+    /* 横幅を割合で指定 */
+    height: 100%;
+    /* 高さは自動指定 */
+    justify-content: center;
+    position: fixed;
+    margin: auto;
+    z-index: -10;
+    animation-name: fadein;
+    animation-duration: 4s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/*ロゴ*/
+
+.logo {
+    margin: 0 auto;
+    padding: 18px 30px;
+    position: absolute;
+    z-index: 111110;
+}
+
+.logo>a {
+    font-size: 24px;
+}
+
+header {
+    margin: 0px;
+}
+
+.p_top {
+    padding-top: 720px;
+    padding-bottom: 0px;
+    margin: 0px auto;
+    text-align: center;
+    z-index: 10000;
+}
+
+
+/* スクロールの実装 */
+
+.scroll {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    display: inline-block;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-decoration: none;
+}
+
+.scroll>span {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(-45deg);
+    animation: sdb 1.5s infinite;
+    box-sizing: border-box;
+}
+
+@keyframes sdb {
+    0% {
+        transform: rotate(-45deg) translate(0, 0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(-45deg) translate(-20px, 20px);
+        opacity: 0;
+    }
+}
+
+
+/* スクロール実装ここまで */
+
+.main {
+    text-align: center;
+    z-index: 100000;
+    padding-top: 180px;
+    /* margin-top: 180px; */
+    /* background: rgba(0, 0, 0, .2); */
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+}
+
+.main>section {
+    padding: 100px 0px;
+}
+
+h1 {
+    font-size: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+h3 {
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+p {
+    width: 60%;
+    padding: 30px 0px;
+    margin: 0px auto;
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+}
+
+.news-list {
+    position: relative;
+    list-style: none;
+    text-align: left;
+    width: 60%;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+}
+
+.news-list li {
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 12px 24px 12px 236px;
+    position: relative;
+}
+
+.news-list li:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.news-list time {
+    color: #ffffff;
+    left: 100px;
+    position: absolute;
+    top: 12px;
+}
+
+.news-list a {
+    color: rgb(255, 255, 255);
+}
+
+table {
+    width: 60%;
+    justify-content: center;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+th {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-spacing: 0;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+td {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-spacing: 0;
+    text-align: left;
+    padding: 10px 20px;
+}
+
+footer {
+    width: 100%;
+    height: 140px;
+    font-size: 12px;
+    text-align: center;
+    align-items: center;
+    padding: 20px 0;
+    margin: auto;
+    background: rgb(240, 240, 240);
+    color: rgb(32, 32, 32);
+    line-height: 1.7em;
+}
+
+footer>large {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.4em;
+}
+
+iframe {
+    margin: 30px 0;
+}
+
+.picGrid_3 {
+    width: 60%;
+    margin: 30px auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.picGrid_3>li {
+    margin: 0px 20px;
+}
+
+#rokehan>.reserve {
+    margin: 0 auto;
+}
+
+.form {
+    width: 40%;
+    font-size: 16px;
+    text-align: left;
+    margin: 0 auto;
+    padding: 0px auto;
+    justify-content: left;
+}
+
+.form_p {
+    margin: 25px auto;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    border: solid 0px rgb(255, 255, 255);
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    height: 20px;
+    background: rgba(153, 153, 153, 0.4);
+    color: #fff;
+}
+
+select[name="select"] {
+    border: solid 0px rgb(255, 255, 255);
+    padding: 0px;
+    font-size: 16px;
+    width: 100%;
+    height: 40px;
+    background: rgba(153, 153, 153, 0.4);
+    color: #fff;
+}
+
+textarea {
+    border: solid 0px rgb(255, 255, 255);
+    width: 100%;
+    height: 160px;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 140%;
+    background: rgba(153, 153, 153, 0.4);
+    color: #fff;
+    resize: auto;
+}
+
+.caution {
+    color: rgb(255, 79, 25);
+    font-size: 20px;
+}
+
+.confirm {
+    font-size: 20px;
+}
