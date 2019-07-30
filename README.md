@@ -12,8 +12,8 @@ This site re-made to design the Website of Hakodate KG Country Club in the lectu
 https://www.hotweb.or.jp/kg-cc/
 
 ## References / リファレンス
->group_inou / MAP
->http://g-a-l.jp/group_inou/map/
->
->坐忘林
->https://zaborin.com/
+group_inou / MAP
+http://g-a-l.jp/group_inou/map/
+
+坐忘林
+https://zaborin.com/
