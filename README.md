@@ -1,8 +1,8 @@
 # hakodateKG_web / 函館KGカントリークラブ ウェブサイトのリデザイン
 
-[here](https://og09tk.github.io/hakodateKG)
+[LINK](https://og09tk.github.io/hakodateKG)
 
-This site re-made to design the Website of Hakodate KG Country Club in the lecture of Human Interface Exercise.
+This site re-design the Website of Hakodate KG Country Club in the lecture of Human Interface Exercise.
 ヒューマンインターフェース演習課題作品。
 
 ## Concept / コンセプト
